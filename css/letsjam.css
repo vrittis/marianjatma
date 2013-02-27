@@ -1,0 +1,69 @@
+#mainevent, #ou, #quand, #wot, #logis
+{
+	min-height: 650px;
+}
+
+h2
+{
+	margin: 0;
+	background-color: #6d6e70;
+	line-height: 120px;
+	position: relative;
+	top: -120px;
+	text-align: center;
+	color: white;
+	-webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+
+#mainevent
+{
+	text-align: center;
+	background: #ccc;
+}
+
+/*#mainevent h1
+{
+    font-family: 'Corben', Georgia, Times, serif;
+    font-size: 40px;
+    line-height: 55px;
+}*/
+
+
+#ou
+{
+	background-image: url(../img/x.jpg);
+	background-position: center top;
+	min-height: 900px;
+	background-repeat: no-repeat;
+}
+
+h2
+{
+    font-family: 'Lobster', Helvetica, Arial, sans-serif;
+    font-size: 70px;
+}
+
+#quand
+{
+}
+
+#wot
+{
+}
+
+#quand
+{
+background-image: url(../img/BackToTheFuture.jpg);
+background-position: center top;
+min-height: 900px;
+background-repeat: no-repeat;
+}
+
+#logis
+{
+background-image: url(../img/Igor.jpg);
+background-position: center top;
+min-height: 900px;
+background-repeat: no-repeat;
+}
