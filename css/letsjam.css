@@ -9,11 +9,15 @@ h2
 	background-color: #6d6e70;
 	line-height: 120px;
 	position: relative;
-	top: -120px;
+	/*top: -120px;*/
 	text-align: center;
 	color: white;
 	-webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
 	box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+	
+	display: inline-block;
+	float: left;
+	padding: 25px;
 }
 
 #mainevent
@@ -34,8 +38,22 @@ h2
 {
 	background-image: url(../img/x.jpg);
 	background-position: center top;
-	min-height: 900px;
+	min-height: 816px;
 	background-repeat: no-repeat;
+}
+
+#ou  .cartouche
+{
+	background: white;
+	opacity: 0.9;
+	position: relative;
+	top: 100px;
+	padding: 50px;
+}
+
+#ou  .cartouche iframe
+{
+	opacity: 1;
 }
 
 h2
@@ -46,6 +64,7 @@ h2
 
 #quand
 {
+min-height: 900px;
 }
 
 #wot
@@ -64,6 +83,6 @@ background-repeat: no-repeat;
 {
 background-image: url(../img/Igor.jpg);
 background-position: center top;
-min-height: 900px;
+min-height: 1080px;
 background-repeat: no-repeat;
 }
