@@ -1,0 +1,75 @@
+
+#content #main
+{
+	float: right;
+    min-width: 700px;
+	 position: relative;
+    width: 40%;
+    z-index: 1;
+	border-left: 1px solid silver;
+}
+
+#content #main .block
+{
+	margin-bottom: 40px;
+	padding: 60px 40px;
+    box-shadow: 0px 10px 15px -10px black;
+    -webkit-box-shadow: 0px 10px 15px -10px black;
+    -moz-box-shadow: 0px 10px 15px -10px black;
+	min-height: 800px;
+}
+
+#content #company
+{
+left:0;
+overflow: hidden;
+position: fixed;
+top: 0;
+width: 60%;
+z-index: 0;
+}
+
+.block
+{
+	clear:both;
+}
+
+h1, h2
+{
+    font-family: 'Lobster', Helvetica, Arial, sans-serif;
+    font-size: 70px;
+
+	margin: 0;
+	line-height: 120px;
+	position: relative;
+	/*top: -120px;*/
+	text-align: center;
+	color: black;
+	
+	/*display: inline-block;
+	float: left;
+	padding: 25px;*/
+}
+
+#ou_illustration
+{
+	/*background-image: url(../img/x.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;*/
+}
+
+#quand_illustration
+{
+	background-image: url(../img/BackToTheFuture.jpg);
+	background-position: right top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#logis_illustration
+{
+	background-image: url(../img/Igor.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

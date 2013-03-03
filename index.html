@@ -11,7 +11,7 @@
     <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
     <style>
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-top: 40px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
     <link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -20,7 +20,6 @@
 	<link href="./css/letsjam.css" rel="stylesheet">
 	
 	<!-- le font --> 
-	<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css"> <!-- ou --->
 	<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
 
@@ -37,12 +36,12 @@
                                    <link rel="shortcut icon" href="./bootstrap/ico/favicon.png">
   </head>
 
-  <body data-spy="scroll" data-target=".navbar" data-offset="71">
+  <body data-spy="scroll" data-target=".navbar" data-offset="400">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-static navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -50,73 +49,234 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#mainevent">Un mariage?</a>
+
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="spy"><a href="#mainevent">Good news everyone!</a></li>
-              <li class="spy"><a href="#ou">C'est o&ugrave;?</a></li>
-              <li class="spy"><a href="#quand">C'est quand?</a></li>
-			  <li class="spy"><a href="#wot">Il va se passer quoi?</a></li>
-			  <li class="spy"><a href="#logis">On peut loger o&ugrave;?</a></li>
-			  <li class="spy"><a href="#blog">D'autres commentaires?</a></li>
+              <li><a href="#mainevent">Good news everyone!</a></li>
+              <li><a href="#ou">O&ugrave;?</a></li>
+              <li><a href="#quand">Quand?</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						Des d&eacute;tails suppl&eacute;mentaires
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#dresscode">Quel est le dresscode?</a>
+						</li>
+						<li>
+							<a href="#logis">Ou peut-on loger?</a>
+						</li>
+						<!--<li class="divider"></li>-->
+						<li>
+							<a href="#enfants">Et les enfants?</a>
+						</li>
+						<li>
+							<a href="#liste">Aves vous une liste de mariage?</a>
+						</li>
+					</ul>
+				</li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-	<div id="mainevent">
-		<h1>Anne-Ga&euml;lle et Samy se marient!</h1>
-	</div>
+
+	<div id="content">
 	
-	<div id="ou">
-	<h2>O&ugrave;?</h2>
-		<div class="container">
-			<div class="span6 cartouche">
-				<p>Merci Junior!</p>
-				<p>L'&eacute;v&egrave;nement va arriver &agrave; Chatillon sur Seine, qui se trouve &agrave; peu pr&egrave;s <a href="https://maps.google.com/maps?q=chatillon+sur+seine&hl=en&ie=UTF8&ll=47.87318,4.540787&spn=0.089584,0.198269&sll=32.546813,-26.279297&sspn=70.80112,135.263672&t=h&hnear=Ch%C3%A2tillon-sur-Seine,+C%C3%B4te-d'Or,+Burgundy,+France&z=13" title="un lien direct vers chatillon sur seine sur google maps, wow!">ici</a>:</p>
-				<iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ch%C3%A2tillon-sur-Seine,+France&amp;aq=0&amp;oq=chatillon+sur+se&amp;sll=37.0625,-95.677068&amp;sspn=67.840216,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=Ch%C3%A2tillon-sur-Seine,+C%C3%B4te-d'Or,+Burgundy,+France&amp;ll=47.860455,4.573714&amp;spn=0.003596,0.008256&amp;t=h&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Ch%C3%A2tillon-sur-Seine,+France&amp;aq=0&amp;oq=chatillon+sur+se&amp;sll=37.0625,-95.677068&amp;sspn=67.840216,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=Ch%C3%A2tillon-sur-Seine,+C%C3%B4te-d'Or,+Burgundy,+France&amp;ll=47.860455,4.573714&amp;spn=0.003596,0.008256&amp;t=h&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+		<div id="main">
+			
+			<div class="block" id="mainevent" >
+			<div >
+				<h1>Anne-Ga&euml;lle et Samy se marient</h1>
+				<p>Oui, oui, nouvelle garantie! Mais vous avez peut-&ecirc;tre des questions &agrave; ce propos? R&eacute;pondons-y.</p>
+			</div>
+			</div>
+			
+			<div class="block" id="ou">
+			<div >
+				<h2>O&ugrave;?</h2>
+				<p><img src="img/x.jpg" title="Merci Junior!"/></p>
+				<p>Le mariage se d&eacute;roulera &agrave; Chatillon sur Seine, &agrave; 1h de Dijon et 2h30 de Paris.</p>
+				<p>En voiture:
+				<br/>
+				Les doux vallons de l'autoroute A5 et A6 peuvent nous amener &agrave; nous.
+				</p>
+				<p>En train:
+				<br/>
+				La gare la plus proche est Montbard. Deux minutes d'arr&ecirc;t.
+				</p>
+			</div>
+			</div>
+			
+			<div class="block" id="quand" >
+			<div id="quand" >
+				<h2>Quand?</h2>
+				<p>Bonne question Doc!</p>
+			</div>
+			</div>
+			
+			<div class="block" id="dresscode">
+			<div >
+				<h2>Quel est le dresscode?</h2>
+				<p>Booyah, l&acirc;chez vous!</p>
+			</div>
+			</div>
+
+			<div class="block" id="logis">
+			<div >
+				<h2>Ou peut-on loger?</h2>
+				<p></p>
+			</div>
+			</div>
+			
+			<div class="block" id="enfants">
+			<div >
+				<h2>Et les enfants?</h2>
+				<p></p>
+			</div>
+			</div>
+			
+			<div class="block" id="liste">
+			<div >
+				<h2>Avez-vous une liste de mariage?</h2>
+				<pre>
+Autrefois pour faire sa cour
+On parlait d'amour
+Pour mieux prouver son ardeur
+On offrait son coeur
+Maintenant c'est plus pareil
+&Ccedil;a change &ccedil;a change
+Pour s&eacute;duire le cher ange
+On lui glisse &agrave; l'oreille
+
+Ah Gudule, viens m'embrasser, et je te donnerai...
+
+Un frigidaire, un joli scooter, un atomixer
+Et du Dunlopillo
+Une cuisini&egrave;re, avec un four en verre
+Des tas de couverts et des pelles &agrave; g&acirc;teau!
+Une tourniquette pour faire la vinaigrette
+Un bel a&eacute;rateur pour bouffer les odeurs
+Des draps qui chauffent
+Un pistolet &agrave; gaufres
+Un avion pour deux...
+Et nous serons heureux!
+
+Autrefois s'il arrivait
+Que l'on se querelle
+L'air lugubre on s'en allait
+En laissant la vaisselle
+Maintenant que voulez-vous
+La vie est si ch&egrave;re
+On dit: &quot;rentre chez ta m&egrave;re&quot;
+Et on se garde tout
+
+Ah Gudule, excuse-toi, ou je reprends tout &ccedil;a...
+
+Mon frigidaire, mon armoire &agrave; cuillers
+Mon &eacute;vier en fer, et mon po&ecirc;le &agrave; mazout
+Mon cire-godasses, mon repasse-limaces
+Mon tabouret-&agrave;-glace et mon chasse-filous!
+La tourniquette, &agrave; faire la vinaigrette
+Le ratatine ordures et le coupe friture
+
+Et si la belle se montre encore rebelle
+On la ficelle dehors, pour confier son sort...
+
+Au frigidaire, &agrave; l'efface-poussi&egrave;re
+A la cuisini&egrave;re, au lit qu'est toujours fait
+Au chauffe-savates, au canon &agrave; patates
+A l'&eacute;ventre-tomate, &agrave; l'&eacute;corche-poulet!
+
+Mais tr&egrave;s tr&egrave;s vite
+On re&ccedil;oit la visite
+D'une tendre petite
+Qui vous offre son coeur
+
+Alors on c&egrave;de
+Car il faut qu'on s'entraide
+Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois
+Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois
+Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
+			</div>
+			</div>
+			
+		</div>
+	
+		<div id="company">
+		
+			<div id="mainevent_illustration" class="illustration">
+			</div>
+			
+			<div id="ou_illustration" class="illustration">
+				<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ch%C3%A2tillon-sur-Seine,+France&amp;aq=0&amp;oq=chatillon+sur+se&amp;sll=37.0625,-95.677068&amp;sspn=67.840216,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=Ch%C3%A2tillon-sur-Seine,+C%C3%B4te-d'Or,+Burgundy,+France&amp;ll=47.860455,4.573714&amp;spn=0.003596,0.008256&amp;t=h&amp;z=14&amp;output=embed"></iframe>
+			</div>
+			
+			<div id="quand_illustration" class="illustration">
+			</div>
+			
+			<div id="dresscode_illustration" class="illustration">
+			</div>
+			
+			<div id="logis_illustration" class="illustration">
+			</div>
+			
+			<div id="enfants_illustration" class="illustration">
+			</div>
+			
+			<div id="liste_illustration" class="illustration">
 			</div>
 		</div>
 	</div>
-	
-<div style="clear: both"></div>
-	<div id="quand">
-	<h2>Quand?</h2>
-		<div class="container">
-			<div class="row">
-				<div class="span6">
-					21 septembre, 15:00;00
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div id="wot">
-	<h2>Il va se passer quoi?</h2>
-		<div class="container">
-			
-		</div>
-		</div>
-	
-	<div id="logis">
-	<h2>On peut loger o&ugrave;?</h2>
-		<div class="container">
-			
-		</div>
-		</div>
-	
-	<div id="blog">
-	<h2>D'autres choses &agrave; dire?</h2>
-		<div class="container">
-			
-		</div>
-		</div>
-	
     <!-- Le javascript
     ================================================== -->
 	<script src="./bootstrap/js/jquery.js" type="text/javascript"></script> <!-- jquery from bootstrap -->
     <script src="./bootstrap/js/bootstrap.min.js"></script>
-    
+    <script>
+		$(function() {
+			var bodyheight = $(window).height()- 40;
+			$("#company .illustration").height(bodyheight);
+			$("#main .block").css("min-height", bodyheight);
+			var bodywidth = $(window).width();
+			var mainwidth = $("#main").width();
+			$("#company").width(bodywidth - mainwidth);
+			
+			// for the window resize
+			$(window).resize(function() {
+				var bodyheight = $(window).height() - 40;
+				$("#company .illustration").height(bodyheight);
+				$("#main .block").css("min-height", bodyheight);
+				var bodywidth = $(window).width();
+				var mainwidth = $("#main").width();
+				$("#company").width(bodywidth - mainwidth);
+				
+				var topValue = $($("a", $("li.active").not(".dropdown")).attr('href') + "_illustration")[0].offsetTop;
+				//$("#company").css("top", topValue * -1 + 40);
+				$("#company").animate({top: topValue * -1 + 40}, 700);
+				
+				$('[data-spy="scroll"]').each(function () {
+					var $spy = $(this).scrollspy('refresh')
+				});
+			});
+			
+			// move!
+			$(".navbar ul li").on("activate", function() {
+				var topValue = $($("a", $("li.active").not(".dropdown")).attr('href') + "_illustration")[0].offsetTop;
+				//alert($("a", this).attr('href'));
+				$("#company").animate({top: topValue * -1 + 40}, 700);
+				//$("#company").css("top", topValue * -1 + 40);
+			});
+			
+			 $('#book').animate({
+opacity: 0.25,
+left: '+=50',
+height: 'toggle'
+}, 5000, function() {
+// Animation complete.
+});
+		});
+	</script>
   </body>
 </html>

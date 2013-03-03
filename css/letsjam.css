@@ -1,89 +1,102 @@
-#mainevent, #ou, #quand, #wot, #logis, #blog
+
+#content #main
 {
-	min-height: 650px;
-		-webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
-	box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
-	margin: 50px 0px;
+	float: right;
+    min-width: 700px;
+	 position: relative;
+    width: 40%;
+    z-index: 1;
+	border-left: 1px solid silver;
+	box-shadow: 35px 0px 30px 30px black;
+	-webkit-box-shadow: 35px 0px 30px 30px black;
+	-moz-box-shadow: 35px 0px 30px 30px black;
 }
 
-h2
+#content #main .block
 {
-	margin: 0;
-	background-color: #6d6e70;
-	line-height: 120px;
-	position: relative;
-	/*top: -120px;*/
-	text-align: center;
-	color: white;
-	
-	display: inline-block;
-	float: left;
-	padding: 25px;
+	padding: 40px;
+	border-bottom: 1px solid silver;
 }
 
-#mainevent
+#content #company
 {
-	text-align: center;
-	background: #ccc;
+left:0;
+overflow: hidden;
+position: fixed;
+top: 40;
+width: 60%;
+z-index: 0;
 }
 
-/*#mainevent h1
+.block
 {
-    font-family: 'Corben', Georgia, Times, serif;
-    font-size: 40px;
-    line-height: 55px;
-}*/
-
-
-#ou
-{
-	background-image: url(../img/x.jpg);
-	background-position: center top;
-	min-height: 816px;
-	background-repeat: no-repeat;
+	clear:both;
 }
 
-#ou  .cartouche
-{
-	background: white;
-	opacity: 0.9;
-	position: relative;
-	top: 100px;
-	padding: 50px;
-}
-
-#ou  .cartouche iframe
-{
-	opacity: 1;
-}
-
-h2
+h1, h2
 {
     font-family: 'Lobster', Helvetica, Arial, sans-serif;
     font-size: 70px;
+
+	margin: 0;
+	line-height: 120px;
+	position: relative;
+	text-align: center;
+	color: black;
 }
 
-#quand
-{
-min-height: 900px;
+#content #main p {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 25px;
 }
 
-#wot
+/* illustrations */
+
+#mainevent_illustration
 {
+	background-image: url(http://placehold.it/350x150);
+	background-position: right top;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-#quand
+#quand_illustration
 {
-background-image: url(../img/BackToTheFuture.jpg);
-background-position: center top;
-min-height: 900px;
-background-repeat: no-repeat;
+	background-image: url(../img/BackToTheFuture.jpg);
+	background-position: right top;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-#logis
+#logis_illustration
 {
-background-image: url(../img/Igor.jpg);
-background-position: center top;
-min-height: 1080px;
-background-repeat: no-repeat;
+	background-image: url(../img/Igor.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#dresscode_illustration
+{
+	background-image: url(../img/Danse.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#enfants_illustration
+{
+	background-image: url(../img/mary.jpg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#liste_illustration
+{
+	background-image: url(../img/moulinex.jpg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
