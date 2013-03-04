@@ -47,9 +47,9 @@
       <div class="navbar-inner">
 		<a class="brand hidden-phone" href="#">Mariage Anne-Ga&euml;lle et Samy</a>
             <ul class="nav pull-right">
-              <li><a href="#mainevent">Good news everyone!</a></li>
-              <li><a href="#ou">O&ugrave;?</a></li>
-              <li><a href="#quand">Quand?</a></li>
+              <li class="menu_entry"><a href="#mainevent">Good news everyone!</a></li>
+              <li class="menu_entry"><a href="#ou">O&ugrave;?</a></li>
+              <li class="menu_entry"><a href="#quand">Quand?</a></li>
 			  <li class="divider-vertical"></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -57,16 +57,16 @@
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
-						<li>
+						<li class="menu_entry">
 							<a href="#dresscode">Quel est le dresscode?</a>
 						</li>
-						<li>
+						<li class="menu_entry">
 							<a href="#logis">Ou peut-on loger?</a>
 						</li>
-						<li>
+						<li class="menu_entry">
 							<a href="#enfants">Et les enfants?</a>
 						</li>
-						<li>
+						<li class="menu_entry">
 							<a href="#liste">Avez-vous une liste de mariage?</a>
 						</li>
 					</ul>
@@ -235,40 +235,43 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script>
 		$(function() {
-			var bodyheight = $(window).height()- 40;
-			$("#company .illustration").height(bodyheight);
-			$("#main .block").css("min-height", bodyheight);
-			var bodywidth = $(window).width();
-			var mainwidth = $("#main").width();
-			$("#company").width(bodywidth - mainwidth);
-			
-			// for the window resize
-			$(window).resize(function() {
+		
+			var SideBar = $("#company");
+			var Illustrations = $("#company .illustration");
+			var Blocks = $("#main .block");
+			var ScrollSpy = $('[data-spy="scroll"]');
+		
+			var changeDimensions = function(){
 				var bodyheight = $(window).height() - 40;
-				$("#company .illustration").height(bodyheight);
-				$("#main .block").css("min-height", bodyheight);
-				var bodywidth = $(window).width();
-				var mainwidth = $("#main").width();
-				$("#company").width(bodywidth - mainwidth);
-				
-				var topValue = $($("a", $("li.active").not(".dropdown")).attr('href') + "_illustration")[0].offsetTop;
-				//$("#company").css("top", topValue * -1 + 40);
-				$("#company").animate({top: topValue * -1 + 40}, 700);
-				
-				$('[data-spy="scroll"]').each(function () {
+				Illustrations.height(bodyheight);
+				Blocks.css("min-height", bodyheight);
+				SideBar.width($(window).width() - $("#main").width());
+			}
+			
+			
+			var calculateTopIllustration = function() {
+				var topValue = $($("li.menu_entry.active a").attr('href') + "_illustration")[0].offsetTop;
+				SideBar.animate({top: topValue * -1 + 40}, 700);
+			};
+
+			var refreshScrollSpy = function() {
+				ScrollSpy.each(function () {
 					var $spy = $(this).scrollspy('refresh')
 				});
-			});
+			}
 			
-			// move!
+			// changeons les dimensions initiales
+			changeDimensions();
+			// on s'accroche au redimensionnement
+			$(window).resize(function() {
+				changeDimensions();
+				calculateTopIllustration();
+				refreshScrollSpy();
+			});
+			// en cas de chagenemtn de menu actif
 			$(".navbar ul li").on("activate", function() {
-				var topValue = $($("a", $("li.active").not(".dropdown")).attr('href') + "_illustration")[0].offsetTop;
-				//alert($("a", this).attr('href'));
-				$("#company").animate({top: topValue * -1 + 40}, 700);
-				//$("#company").css("top", topValue * -1 + 40);
+				calculateTopIllustration();
 			});
-			
-			
 		});
 	</script>
   </body>
