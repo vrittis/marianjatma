@@ -8,13 +8,13 @@
     <meta name="author" content="samy">
 
     <!-- Le styles -->
-    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
-        padding-top: 40px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
       }
     </style>
-    <link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
 	<!-- le custom --> 
 	<link href="./css/letsjam.css" rel="stylesheet">
@@ -241,18 +241,19 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 			var Illustrations = $("#company .illustration");
 			var Blocks = $("#main .block");
 			var ScrollSpy = $('[data-spy="scroll"]');
+			var Main = $("#main");
 		
 			var changeDimensions = function(){
 				var bodyheight = $(window).height() - 40;
 				Illustrations.height(bodyheight);
 				Blocks.css("min-height", bodyheight);
-				SideBar.width($(window).width() - $("#main").width());
+				SideBar.width($(window).width() - Main.width());
 			}
 			
 			
 			var calculateTopIllustration = function() {
 				var topValue = $($("li.menu_entry.active a").attr('href') + "_illustration")[0].offsetTop;
-				SideBar.animate({top: topValue * -1 + 40}, 700);
+				SideBar.animate({top: topValue * -1 + 40}, 300);
 			};
 
 			var refreshScrollSpy = function() {
