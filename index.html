@@ -70,21 +70,21 @@
 			  <li class="divider-vertical"></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						je voudrais savoir...
+						Je voudrais savoir...
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
 						<li class="menu_entry">
-							<a href="#dresscode">Quel est le dresscode?</a>
+							<a href="#dresscode">... quel est le dresscode?</a>
 						</li>
 						<li class="menu_entry">
-							<a href="#logis">O&ugrave; peut-on loger?</a>
+							<a href="#logis">... o&ugrave; peut-on loger?</a>
 						</li>
 						<li class="menu_entry">
-							<a href="#enfants">Et les enfants?</a>
+							<a href="#enfants">... que faire des enfants?</a>
 						</li>
 						<li class="menu_entry">
-							<a href="#liste">Avez-vous une liste de mariage?</a>
+							<a href="#liste">... avez-vous une liste de mariage?</a>
 						</li>
 					</ul>
 				</li>
@@ -111,7 +111,7 @@
 				<h2>O&ugrave;?</h2>
 				<p><img src="img/x.jpg" title="Merci Junior!"/></p>
 				<p>Le mariage se d&eacute;roulera &agrave; la Mairie de <strong>Chatillon sur Seine</strong>, &agrave; 1h de Dijon et 2h30 de Paris.</p>
-				<div id="mobile_map" class="visible-phone">
+				<div id="mobile_map" class="visible-phone map">
 				</div>
 				<p><strong>En voiture</strong>:
 				<br/>
@@ -119,7 +119,7 @@
 				</p>
 				<p><strong>En train</strong>:
 				<br/>
-				La gare la plus proche de Chatillon sur Seine se trouve &agrave; Montbard, et un service de bus relie Montbard &agrave; Chatillon sur Seine. Des trains TGV ou TER au d&eacute;part de la Gare de Lyon &agrave; Paris vous y d&eacute;posent. M&ecirc;me chose depuis Dijon. Il existe m&ecirc;me des trains directs depuis Lyon, mais la SNCF vous renseignera &agrave; la perfection.
+				La gare la plus proche de Chatillon sur Seine se trouve &agrave; Montbard, et un service de bus relie les deux villes. Si vous avez besoin de transport entre Montbard et Chatillon sur Seine, faites-le nous savoir.
 				</p>
 			</div>
 			</div>
@@ -134,7 +134,7 @@
 			<div class="block" id="contact" >
 			<div>
 				<h2>Comment nous contacter?</h2>
-				<p>En cas d'absence d'un projecteur suffisament puissant pour balayer le ciel avec nos initiales, vous pouvez utiliser les moyens suivants:</p>
+				<p>Si vous n'avez pas de projecteur suffisament puissant pour balayer le ciel avec nos initiales, vous pouvez utiliser les moyens suivants:</p>
 				<ul>
 					<li><strong>par email</strong>: <a href="mailto:mariage@beaudoux.net">mariage@beaudoux.net</a></li>
 					<li><strong>par courrier</strong>: Anne-Ga&euml;lle Donnet et Samy Beaudoux, 8 rue Seguin, 69002 Lyon</li>
@@ -153,16 +153,10 @@
 			<div class="block" id="logis">
 			<div >
 				<h2>O&ugrave; peut-on loger?</h2>
-				<p>Une liste d'h&ocirc;tels/g&icirc;tes/chambres d'h&ocirc;te &agrave; proximit&eacute; est disponible ci-dessous:</p>
+				<p>Une liste d'h&ocirc;tels/g&icirc;tes/chambres d'h&ocirc;te &agrave; proximit&eacute; du lieu du vin d'honneur et du repas est disponible ci-dessous:</p>
 				<ul id="logements">
-					<li>TODO</li>
+					
 				</ul>
-				<table>
-					<tr>
-						<td>TODO
-						</td>
-					</tr>
-				</table>
 				<p>Il est possible de camper sur les lieux du mariage pour les afficionados de la toile de tente.</p>
 			</div>
 			</div>
@@ -170,7 +164,8 @@
 			<div class="block" id="enfants">
 			<div >
 				<h2>Et les enfants?</h2>
-				<p>Nous sommes actuellement &agrave; la recherche des clones de Mary Poppins n&eacute;cessaires &agrave; la garde des enfants, ces derniers seront gard&eacute;s dans le g&icirc;te jouxtant la salle du mariage. Il se peut toutefois que les possibilit&eacute;s de garde soient modifi&eacute;es en cas d'inexistence de clones de Mary Poppins...</p>
+				<p>Nous sommes actuellement &agrave; la recherche des clones de Mary Poppins n&eacute;cessaires &agrave; la garde des enfants pendant le repas, ces derniers seront gard&eacute;s dans le g&icirc;te jouxtant la salle du mariage. Il se peut toutefois que les possibilit&eacute;s de garde soient modifi&eacute;es en cas d'inexistence de clones de Mary Poppins...</p>
+				<p>Cette section sera mise &agrave; jour ult&eacute;rieurement quand nous aurons plus d'informations.</p>
 			</div>
 			</div>
 			
@@ -247,7 +242,7 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 				<span class="legend">le mariage (all&eacute;gorie) par Matthias B.</span>
 			</div>
 			
-			<div id="ou_illustration" class="illustration">
+			<div id="ou_illustration" class="illustration map">
 			</div>
 			
 			<div id="quand_illustration" class="illustration">
@@ -259,7 +254,7 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 			<div id="dresscode_illustration" class="illustration">
 			</div>
 			
-			<div id="logis_illustration" class="illustration">
+			<div id="logis_illustration" class="illustration map">
 			</div>
 			
 			<div id="enfants_illustration" class="illustration">
@@ -319,15 +314,26 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 			
 			
 			var LatLngChatillonSurSeine = new google.maps.LatLng(47.860455, 4.573714);
+			var LatLngAiseyBonEspoir = new google.maps.LatLng(47.755541,4.56512);
+			
 			var mapOptions = {
 				zoom: 7,
 				streetViewControl: false,
 				center: LatLngChatillonSurSeine,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
+				mapTypeId: google.maps.MapTypeId.ROADMAP 
 			};
 			var mapIllustration = new google.maps.Map(document.getElementById('ou_illustration'), mapOptions);
 			var mapMobile = new google.maps.Map(document.getElementById('mobile_map'), mapOptions);
 			
+			var mapLogisOptions = {
+				zoom: 9,
+				streetViewControl: false,
+				center: LatLngChatillonSurSeine,
+				mapTypeId: google.maps.MapTypeId.HYBRID 
+			};
+			var mapLogis = new google.maps.Map(document.getElementById('logis_illustration'), mapLogisOptions);
+			
+			/* les amrkers sur la carte de la mairie */
 			var markerIllustration = new google.maps.Marker({
 				position: LatLngChatillonSurSeine,
 				map: mapIllustration,
@@ -338,6 +344,14 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 				map: mapMobile,
 				title: 'C\'est ici!'
 			});
+			
+			/* les markers sur la carte de bon espoir */
+			var markerBonEspoir = new google.maps.Marker({
+				position: LatLngAiseyBonEspoir,
+				map: mapLogis,
+				title: 'Vin d\'honneur et repas'
+			});
+			
 			
 			function daysTill() {
 			  //----------  EDIT THE VARIABLES BELOW  ------------------
@@ -358,7 +372,152 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 			
 			/* combien de jours? */
 			$("#remainingDays").text(daysTill().toString());
+			
+			
+			/* templating! Rick Strahl's */
+			var _tmplCache = {}
+			this.parseTemplate = function(str, data) {
+				/// <summary>
+				/// Client side template parser that uses &lt;#= #&gt; and &lt;# code #&gt; expressions.
+				/// and # # code blocks for template expansion.
+				/// NOTE: chokes on single quotes in the document in some situations
+				///       use &amp;rsquo; for literals in text and avoid any single quote
+				///       attribute delimiters.
+				/// </summary>    
+				/// <param name="str" type="string">The text of the template to expand</param>    
+				/// <param name="data" type="var">
+				/// Any data that is to be merged. Pass an object and
+				/// that object's properties are visible as variables.
+				/// </param>    
+				/// <returns type="string" />  
+				var err = "";
+				try {
+					var func = _tmplCache[str];
+					if (!func) {
+						var strFunc =
+						"var p=[],print=function(){p.push.apply(p,arguments);};" +
+									"with(obj){p.push('" +
+						//                        str
+						//                  .replace(/[\r\t\n]/g, " ")
+						//                  .split("<#").join("\t")
+						//                  .replace(/((^|#>)[^\t]*)'/g, "$1\r")
+						//                  .replace(/\t=(.*?)#>/g, "',$1,'")
+						//                  .split("\t").join("');")
+						//                  .split("#>").join("p.push('")
+						//                  .split("\r").join("\\'") + "');}return p.join('');";
+
+						str.replace(/[\r\t\n]/g, " ")
+						   .replace(/'(?=[^#]*#>)/g, "\t")
+						   .split("'").join("\\'")
+						   .split("\t").join("'")
+						   .replace(/<#=(.+?)#>/g, "',$1,'")
+						   .split("<#").join("');")
+						   .split("#>").join("p.push('")
+						   + "');}return p.join('');";
+
+						//alert(strFunc);
+						func = new Function("obj", strFunc);
+						_tmplCache[str] = func;
+					}
+					return func(data);
+				} catch (e) { err = e.message; }
+				return ""; //"< # ERROR: " + err.htmlEncode() + " # >";
+			}
+			
+			/* ok, maintenant peuplons les logis :) */
+			var logis = [
+				{
+					"Id": "CHATILLONHOTELCOTEDOR",
+					"Nom":"H&ocirc;tel de la C&ocirc;te-d'or",
+					"Adresse": "2, rue Charles Ronot",
+					"Telephone": "03 80 91 13 29",
+					"Infos": ["Hotel trois &eacute;toiles", "9 chambres", "70-80&euro; la chambre", "email: remillet.gerard@club-internet.fr"],
+					"Latitude":47.858303,
+					"Longitude":4.571182
+				},
+				{
+					"Id": "CHATILLONHOTELMONTAGNE",
+					"Nom":"H&ocirc;tel La Montagne",
+					"Adresse": "12, rue Mar&eacute;chal de Lattre de Tassigny",
+					"Telephone": "03 80 91 10 61",
+					"Infos": ["12 chambres", "40&euro; la chambre", "http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html"],
+					"Latitude":47.830674,
+					"Longitude":4.524994
+				},
+				{
+					"Id": "CHATILLONHOTELSTVORLES",
+					"Nom":"H&ocirc;tel Le Saint Vorles",
+					"Adresse": "1, rue pr&eacute;s Carnot",
+					"Telephone": "03 80 81 55 83",
+					"Infos": ["&agrave; partir de 47 euros"],
+					"Latitude":47.830674,
+					"Longitude":4.524994
+				},
+				{
+					"Id": "CHATILLONHOTELCHEVALROUGE",
+					"Nom":"H&ocirc;tel du Cheval rouge",
+					"Adresse": "4 place du 8 Mai 1945",
+					"Telephone": "03 80 81 53 70",
+					"Infos": ["43 euros"],
+					"Latitude":47.859865,
+					"Longitude":4.570903
+				}
+			];
+
+			function createMarker(lat, lon, logisInfos) {
+				var newmarker = new google.maps.Marker({
+					position: new google.maps.LatLng(lat, lon),
+					map: mapLogis,
+					title: "" //logisInfos["Nom"] + " - " + logisInfos["Adresse"]
+				});
+
+				newmarker['infowindow'] = new google.maps.InfoWindow({
+						content: document.parseTemplate($("#LogisTemplate").html(), logisInfos)
+					});
+
+				google.maps.event.addListener(newmarker, 'mouseover', function() {
+					this['infowindow'].open(mapLogis, this);
+				});
+				
+				google.maps.event.addListener(newmarker, 'mouseout', function() {
+					this['infowindow'].close();
+				});
+				
+				google.maps.event.addListener(newmarker, 'click', function() {
+					window.scrollTo(0, $("#" + logisInfos["Id"]).position().top - 50);
+				});
+				
+				var newEntry = $("<li id='" + logisInfos["Id"] + "'>" + document.parseTemplate($("#LogisTemplate").html(), logisInfos) + "</li>");
+				
+				$("#logements").append(newEntry);
+				newEntry.on("click", function() {
+					mapLogis.setCenter(newMarker.getPosition()); 
+					newmarker['infowindow'].open(mapLogis)
+				});
+			}
+			
+			$.each(logis, function() {
+				createMarker(this["Latitude"], this["Longitude"], this);
+			});
+			
+			
 		});
+	</script>
+	
+	<script id="LogisTemplate" type="text/html">
+	 <div class="Logis">
+		<div class="Nom"><#= Nom #></div>
+		<div class="Adresse"><#= Adresse #></div>
+		<div class="Telephone"><#= Telephone #></div>
+		<div class="Informations">
+			<ul>
+				<# for(var i=0; i < Infos.length; i++)     
+				{ #>
+				<li><#= Infos[i]#></li>
+				<# } #>
+			</ul>
+		</div>
+	 </div>
 	</script>
   </body>
 </html>
