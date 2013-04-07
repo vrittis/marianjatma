@@ -16,6 +16,7 @@
 {
 	padding: 40px;
 	border-bottom: 1px solid silver;
+	background: url(../img/cream_dust/cream_dust.png);
 }
 
 #content #main #mobile_map
@@ -56,10 +57,15 @@ font-family: 'Lobster', Helvetica, Arial, sans-serif;
 margin-left: 20px;
 }
 
-#content #main p, #content #main pre {
+#content #main p, #content #main pre, #content #main li{
     font-family: 'Cabin', Helvetica, Arial, sans-serif;
     font-size: 35px;
     line-height: 45px;
+}
+
+#content #main li
+{
+	list-style: none;
 }
 
 #content #main pre {
@@ -69,9 +75,22 @@ margin-left: 20px;
 
 /* illustrations */
 
+.illustration .legend {
+	background: #555;
+	color: white;
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 25px;
+	padding: 10px;
+	position: fixed;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+
 #mainevent_illustration
 {
-	background-image: url(http://placehold.it/350x150);
+	background-image: url(../img/Mariage.png);
 	background-position: right top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -81,6 +100,14 @@ margin-left: 20px;
 {
 	background-image: url(../img/BackToTheFuture.jpg);
 	background-position: right top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contact_illustration
+{
+	background-image: url(../img/Bat_Signal.jpg);
+	background-position: left top;
 	background-repeat: no-repeat;
 	background-size: cover;
 }

@@ -48,12 +48,29 @@
 		<a class="brand hidden-phone" href="#">Mariage Anne-Ga&euml;lle et Samy</a>
             <ul class="nav pull-right">
               <li class="menu_entry"><a href="#mainevent">Good news everyone!</a></li>
-              <li class="menu_entry"><a href="#ou">O&ugrave;?</a></li>
-              <li class="menu_entry"><a href="#quand">Quand?</a></li>
+			  
+			  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						Je viens, bien s&ucirc;r!
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="menu_entry">
+							<a href="#ou">Mais &ccedil;a se passe o&ugrave;?</a>
+						</li>
+						<li class="menu_entry">
+							<a href="#quand">Et &ccedil;a se passe quand?</a>
+						</li>
+						<li class="menu_entry">
+							<a href="#contact">Comment vous contacter?</a>
+						</li>
+					</ul>
+				</li>
+			  
 			  <li class="divider-vertical"></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						Des d&eacute;tails suppl&eacute;mentaires
+						je voudrais savoir...
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
@@ -61,7 +78,7 @@
 							<a href="#dresscode">Quel est le dresscode?</a>
 						</li>
 						<li class="menu_entry">
-							<a href="#logis">Ou peut-on loger?</a>
+							<a href="#logis">O&ugrave; peut-on loger?</a>
 						</li>
 						<li class="menu_entry">
 							<a href="#enfants">Et les enfants?</a>
@@ -83,8 +100,9 @@
 			
 			<div class="block" id="mainevent" >
 			<div >
-				<h1>Anne-Ga&euml;lle et Samy se marient</h1>
-				<p>Oui, oui, nouvelle garantie! Mais vous avez peut-&ecirc;tre des questions &agrave; ce propos? R&eacute;pondons-y.</p>
+				<h1>Anne-Ga&euml;lle et Samy se marient!</h1>
+				<p>H&eacute; oui! Apr&egrave;s toutes ces aventures depuis 8 ans, vous ne vous y attendiez plus (ou pas)! On ne va pas dire que nous non plus, mais presque!</p>
+				<p>Alors un mariage vient en g&eacute;n&eacute;ral avec tout plein de questions; ce site a pour but de r&eacute;pondre &agrave; vos interrogations afin de vous permettre de venir nous retrouver dans les meilleures conditions possibles!</p>
 			</div>
 			</div>
 			
@@ -92,9 +110,8 @@
 			<div >
 				<h2>O&ugrave;?</h2>
 				<p><img src="img/x.jpg" title="Merci Junior!"/></p>
-				<p>Le mariage se d&eacute;roulera &agrave; Chatillon sur Seine, &agrave; 1h de Dijon et 2h30 de Paris.</p>
+				<p>Le mariage se d&eacute;roulera &agrave; la Mairie de <strong>Chatillon sur Seine</strong>, &agrave; 1h de Dijon et 2h30 de Paris.</p>
 				<div id="mobile_map" class="visible-phone">
-					<!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ch%C3%A2tillon-sur-Seine,+France&amp;aq=0&amp;oq=chatillon+sur+se&amp;sll=37.0625,-95.677068&amp;sspn=67.840216,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=Ch%C3%A2tillon-sur-Seine,+C%C3%B4te-d'Or,+Burgundy,+France&amp;ll=47.860455,4.573714&amp;spn=0.003596,0.008256&amp;t=h&amp;z=14&amp;output=embed"></iframe>-->
 				</div>
 				<p><strong>En voiture</strong>:
 				<br/>
@@ -102,44 +119,65 @@
 				</p>
 				<p><strong>En train</strong>:
 				<br/>
-				La gare la plus proche est Montbard. Deux minutes d'arr&ecirc;t.
+				La gare la plus proche de Chatillon sur Seine se trouve &agrave; Montbard, et un service de bus relie Montbard &agrave; Chatillon sur Seine. Des trains TGV ou TER au d&eacute;part de la Gare de Lyon &agrave; Paris vous y d&eacute;posent. M&ecirc;me chose depuis Dijon. Il existe m&ecirc;me des trains directs depuis Lyon, mais la SNCF vous renseignera &agrave; la perfection.
 				</p>
 			</div>
 			</div>
 			
 			<div class="block" id="quand" >
-			<div id="quand" >
+			<div>
 				<h2>Quand?</h2>
-				<p>Bonne question Doc!</p>
-				<p>La date prévue est le 21 septembre 2013 à 15h (à moins que ce soit 16h)</p>
+				<p>R&eacute;glez vos calendriers sur le 21 septembre 2013, &agrave; 16h. Pour les plus pr&eacute;cis d'entre vous c'est dans <span id="remainingDays"></span> jours!</p>
+			</div>
+			</div>
+			
+			<div class="block" id="contact" >
+			<div>
+				<h2>Comment nous contacter?</h2>
+				<p>En cas d'absence d'un projecteur suffisament puissant pour balayer le ciel avec nos initiales, vous pouvez utiliser les moyens suivants:</p>
+				<ul>
+					<li><strong>par email</strong>: <a href="mailto:mariage@beaudoux.net">mariage@beaudoux.net</a></li>
+					<li><strong>par courrier</strong>: Anne-Ga&euml;lle Donnet et Samy Beaudoux, 8 rue Seguin, 69002 Lyon</li>
+				</ul>
 			</div>
 			</div>
 			
 			<div class="block" id="dresscode">
 			<div >
 				<h2>Quel est le dresscode?</h2>
-				<p>Booyah, l&acirc;chez vous!</p>
+				<p>Notre humour fac&eacute;tieux et sophistiqu&eacute; pourrait nous pousser &agrave; pr&ocirc;ner le costume de poulet ou les maillots de bain. N&eacute;ammoins c'est une question s&eacute;rieuse aussi nous r&eacute;pondrons simplement qu'il n'y a pas de dresscode particulier demand&eacute; pour les invit&eacute;s.</p>
+				<p>Pr&eacute;voyez quand m&ecirc;me une petite laine au cas ou l'automne soit particuli&egrave;rement brumeux.</p>
 			</div>
 			</div>
 
 			<div class="block" id="logis">
 			<div >
-				<h2>Ou peut-on loger?</h2>
-				<p></p>
+				<h2>O&ugrave; peut-on loger?</h2>
+				<p>Une liste d'h&ocirc;tels/g&icirc;tes/chambres d'h&ocirc;te &agrave; proximit&eacute; est disponible ci-dessous:</p>
+				<ul id="logements">
+					<li>TODO</li>
+				</ul>
+				<table>
+					<tr>
+						<td>TODO
+						</td>
+					</tr>
+				</table>
+				<p>Il est possible de camper sur les lieux du mariage pour les afficionados de la toile de tente.</p>
 			</div>
 			</div>
 			
 			<div class="block" id="enfants">
 			<div >
 				<h2>Et les enfants?</h2>
-				<p></p>
+				<p>Nous sommes actuellement &agrave; la recherche des clones de Mary Poppins n&eacute;cessaires &agrave; la garde des enfants, ces derniers seront gard&eacute;s dans le g&icirc;te jouxtant la salle du mariage. Il se peut toutefois que les possibilit&eacute;s de garde soient modifi&eacute;es en cas d'inexistence de clones de Mary Poppins...</p>
 			</div>
 			</div>
 			
 			<div class="block" id="liste">
 			<div >
 				<h2>Avez-vous une liste de mariage?</h2>
-				<pre>
+				<pre style=display:none">
 Autrefois pour faire sa cour
 On parlait d'amour
 Pour mieux prouver son ardeur
@@ -206,13 +244,16 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 		<div id="company" class="hidden-phone">
 		
 			<div id="mainevent_illustration" class="illustration">
+				<span class="legend">le mariage (all&eacute;gorie) par Matthias B.</span>
 			</div>
 			
 			<div id="ou_illustration" class="illustration">
-				<!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Ch%C3%A2tillon-sur-Seine,+France&amp;aq=0&amp;oq=chatillon+sur+se&amp;sll=37.0625,-95.677068&amp;sspn=67.840216,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=Ch%C3%A2tillon-sur-Seine,+C%C3%B4te-d'Or,+Burgundy,+France&amp;ll=47.860455,4.573714&amp;spn=0.003596,0.008256&amp;t=h&amp;z=14&amp;output=embed"></iframe>-->
 			</div>
 			
 			<div id="quand_illustration" class="illustration">
+			</div>
+			
+			<div id="contact_illustration" class="illustration">
 			</div>
 			
 			<div id="dresscode_illustration" class="illustration">
@@ -297,6 +338,26 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 				map: mapMobile,
 				title: 'C\'est ici!'
 			});
+			
+			function daysTill() {
+			  //----------  EDIT THE VARIABLES BELOW  ------------------
+			  // EDIT THE VARIABLES BELOW
+			  var day=	21; // Day
+			  var month=	9; // Month
+			  var year=	2013; //Year
+			  //----------  END OF EDIT  -------------------------------
+
+			  var daystocount=new Date(year, month -1, day);
+			  today=new Date();
+			  if (today.getMonth()==month && today.getDate()>day) {
+				daystocount.setFullYear(daystocount.getFullYear());
+				}
+			  var oneday=1000*60*60*24;
+			  return (Math.ceil((daystocount.getTime()-today.getTime())/(oneday)));
+			}
+			
+			/* combien de jours? */
+			$("#remainingDays").text(daysTill().toString());
 		});
 	</script>
   </body>
