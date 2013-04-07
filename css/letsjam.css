@@ -76,7 +76,7 @@ margin-left: 20px;
 /* spécifique logis */
 #content #main #logements .Logis
 {
-	background: #CCC;
+	background: #EEE;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -87,26 +87,23 @@ margin-left: 20px;
 }
 #content #main #logements .Logis .Informations
 {
-	background: #999;
+	background: #CCC;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 	margin: 10px 0px;
-	font-size: 20px;
-	line-height: 24px;
-	float: right;
+	padding: 5px;
 }
 
 #content #main #logements .Logis .Informations li
 {
-	background: #999;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	margin: 10px 0px;
 	font-size: 20px;
 	line-height: 24px;
-	float: right;
+}
+
+#content #main #logements .SelectedLogis
+{
+	background: yellow;
 }
 
 /* illustrations */

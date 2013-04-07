@@ -474,7 +474,7 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 				newmarker['infowindow'] = new google.maps.InfoWindow({
 						content: document.parseTemplate($("#LogisTemplate").html(), logisInfos)
 					});
-
+				
 				google.maps.event.addListener(newmarker, 'mouseover', function() {
 					this['infowindow'].open(mapLogis, this);
 				});
@@ -484,15 +484,20 @@ Et l'on vit comme &ccedil;a jusqu'&agrave; la prochaine fois</pre>
 				});
 				
 				google.maps.event.addListener(newmarker, 'click', function() {
-					window.scrollTo(0, $("#" + logisInfos["Id"]).position().top - 50);
+					$(".SelectedLogis").removeClass("SelectedLogis");
+					var blockInfos = $("#" + logisInfos["Id"]);
+					window.scrollTo(0, blockInfos.position().top - 50);
+					blockInfos.addClass("SelectedLogis");
 				});
 				
 				var newEntry = $("<li id='" + logisInfos["Id"] + "'>" + document.parseTemplate($("#LogisTemplate").html(), logisInfos) + "</li>");
 				
 				$("#logements").append(newEntry);
 				newEntry.on("click", function() {
-					mapLogis.setCenter(newMarker.getPosition()); 
-					newmarker['infowindow'].open(mapLogis)
+					$(".SelectedLogis").removeClass("SelectedLogis");
+					mapLogis.setCenter(newmarker.getPosition()); 
+					newmarker["infowindow"].open(mapLogis, newmarker);
+					newEntry.addClass("SelectedLogis");
 				});
 			}
 			
