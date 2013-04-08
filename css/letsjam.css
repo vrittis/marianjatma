@@ -16,7 +16,12 @@
 {
 	padding: 40px;
 	border-bottom: 1px solid silver;
-	background: url(../img/cream_dust/cream_dust.png);
+	background: url(../img/lightpaperfibers/lightpaperfibers.png);
+}
+
+#content #main .block  p
+{
+	text-align: justify;
 }
 
 #content #main #mobile_map
@@ -74,36 +79,78 @@ margin-left: 20px;
 }
 
 /* spécifique logis */
-#content #main #logements .Logis
+#content #main ul#logements
 {
-	background: #EEE;
+	margin: 0px;
+}
+
+#content #main #logements .Logis 
+{
+	background: url(../img/textured_paper/textured_paper.png);
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+	border-left: 4px solid transparent;
 	margin: 10px 0px;
 	font-size: 22px;
 	line-height: 26px;
 	padding: 10px;
+	clear: both;
+	cursor: pointer;
 }
-#content #main #logements .Logis .Informations
+
+.InfoBlock .Nom
 {
-	background: #CCC;
+	font-weight: bolder;
+}
+
+#content #main #logements .Logis .InfoBlock
+{
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+
+#content #main #logements .Logis .AdditionalData
+{
+	background: url(../img/mochaGrunge/mochaGrunge.png);
+	color: #fff;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	margin: 10px 0px;
 	padding: 5px;
+	display: inline-block;
+	width: 100%;
 }
 
-#content #main #logements .Logis .Informations li
+#content #main #logements .Logis .AdditionalData ul
+{
+	padding: 0px;
+	margin: 3px;
+}
+
+#content #main #logements .Logis .AdditionalData li
 {
 	font-size: 20px;
 	line-height: 24px;
 }
 
+#content #main #logements .Logis .AdditionalData a
+{
+	color: #FF8205;
+}
+
 #content #main #logements .SelectedLogis
 {
-	background: yellow;
+	border-left: 4px solid #FF8205;
+}
+
+/* on gère les infowindow de google map */
+.InfoBlock .AdditionalData li 
+{	
+	list-style: none;
 }
 
 /* illustrations */
