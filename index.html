@@ -242,12 +242,12 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 		</div>
 	
 		<div id="company" class="hidden-phone">
-		
 			<div id="mainevent_illustration" class="illustration">
 				<span class="legend">le mariage (allégorie) par Matthias B.</span>
 			</div>
 			
 			<div id="ou_illustration" class="illustration map">
+				
 			</div>
 			
 			<div id="quand_illustration" class="illustration">
@@ -266,6 +266,9 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 			</div>
 			
 			<div id="liste_illustration" class="illustration">
+			</div>
+			
+			<div id="secret_illustration" class="illustration">
 			</div>
 		</div>
 	</div>
@@ -419,7 +422,7 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 			var mapMobile = new google.maps.Map(document.getElementById('mobile_map'), mapOptions);
 			
 			var mapLogisOptions = {
-				zoom: 10,
+				zoom: 11,
 				streetViewControl: false,
 				center: LatLngChatillonSurSeine,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -454,13 +457,37 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 
 			/* ok, maintenant peuplons les logis :) */
 			var logis = [
-				{"Id":"htelDeLaCtedor", "Type":"hotel", "Nom":"Hôtel de La Côte-d'or", "Adresse": "2, rue Charles Ronot, Chatillon sur Seine", "Telephone": "03 80 91 13 29", "Infos":["email: remillet.gerard@club-internet.fr", "hôtel trois étoiles", "70-80€ la chambre", "9 chambres"], "Lat":47.858302, "Lng":4.571176},
-				{"Id":"htelLaMontagne", "Type":"hotel", "Nom":"Hôtel La Montagne", "Adresse": "12, rue Maréchal de Lattre de Tassigny, Chatillon sur Seine", "Telephone": "03 80 91 10 61", "Infos":["40€ la chambre", "12 chambres", "http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html"], "Lat":48.78732, "Lng":2.232771},
-				{"Id":"leSaintVorles", "Type":"hotel", "Nom":"Le Saint Vorles", "Adresse": "1, Rue prés Carnot, Chatillon sur Seine", "Telephone": "03 80 81 55 83", "Infos":["à partir de 47€"], "Lat":47.860494, "Lng":4.573197},
-				{"Id":"htelDuChevalRouge", "Type":"hotel", "Nom":"Hôtel du Cheval rouge", "Adresse": "4 place du 8 Mai 1945, Chatillon sur Seine", "Telephone": "03 80 81 53 70", "Infos":["à partir de 43€"], "Lat":47.859777, "Lng":4.571696},
-				{"Id":"sylviaHotel", "Type":"hotel", "Nom":"Sylvia Hotel", "Adresse": "9 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 02 44", "Infos":["email: sylviahotel@wanadoo.fr", "hôtel deux étoiles", "57€ la chambre", "17 chambres"], "Lat":47.867401, "Lng":4.573138},
-				{"Id":"tipazaExOllin", "Type":"hotel", "Nom":"Tipaza (ex Ollin)", "Adresse": "32 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 28 25", "Infos":["aucune note"], "Lat":47.868996, "Lng":4.572561},
-				{"Id":"htelrestaurantDeLaPoste", "Type":"chambredhote", "Nom":"Hôtel-restaurant de la Poste", "Adresse": "6, rue Amont, Villaines en duesmois", "Telephone": "03 80 89 03 01", "Infos":["à partir de 50€", "4 chambres"], "Lat":47.680631, "Lng":4.525489},
+				{"Id":"htelDeLaCtedor", "Type":"hotel", "Nom":"Hôtel de La Côte-d'or", "Adresse": "2, rue Charles Ronot, Chatillon sur Seine", "Telephone": "03 80 91 13 29", "Infos":["<a href=\"mailto:remillet.gerard@club-internet.fr\">remillet.gerard@club-internet.fr</a>", "Trois étoiles", "70-80€ la chambre", "9 chambres"], "Lat":47.858302, "Lng":4.571176},
+{"Id":"htelLaMontagne", "Type":"hotel", "Nom":"Hôtel La Montagne", "Adresse": "12, rue Maréchal de Lattre de Tassigny, Chatillon sur Seine", "Telephone": "03 80 91 10 61", "Infos":["40€ la chambre", "12 chambres", "<a href=\"http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html\">Site</a>"], "Lat":48.78732, "Lng":2.232771},
+{"Id":"leSaintVorles", "Type":"hotel", "Nom":"Le Saint Vorles", "Adresse": "1, Rue prés Carnot, Chatillon sur Seine", "Telephone": "03 80 81 55 83", "Infos":["à partir de 47€"], "Lat":47.860494, "Lng":4.573197},
+{"Id":"htelDuChevalRouge", "Type":"hotel", "Nom":"Hôtel du Cheval rouge", "Adresse": "4 place du 8 Mai 1945, Chatillon sur Seine", "Telephone": "03 80 81 53 70", "Infos":["à partir de 43€"], "Lat":47.859777, "Lng":4.571696},
+{"Id":"sylviaHotel", "Type":"hotel", "Nom":"Sylvia Hotel", "Adresse": "9 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 02 44", "Infos":["<a href=\"mailto:sylviahotel@wanadoo.fr\">sylviahotel@wanadoo.fr</a>", "Deux étoiles", "57€ la chambre", "17 chambres"], "Lat":47.867401, "Lng":4.573138},
+{"Id":"tipazaExOllin", "Type":"hotel", "Nom":"Tipaza (ex Ollin)", "Adresse": "32 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 28 25", "Infos":["aucune note"], "Lat":47.868996, "Lng":4.572561},
+{"Id":"htelrestaurantDeLaPoste", "Type":"hotel", "Nom":"Hôtel-restaurant de la Poste", "Adresse": "6, rue Amont, Villaines en duesmois", "Telephone": "03 80 89 03 01", "Infos":["à partir de 50€", "4 chambres"], "Lat":47.680631, "Lng":4.525489},
+{"Id":"aubergeDeLaBaume", "Type":"hotel", "Nom":"Auberge de la Baume", "Adresse": "Rue d'en Bas 21330 Balot", "Telephone": "03 80 81 40 15", "Infos":["<a href=\"mailto:la.baume@aliceadsl.fr\">la.baume@aliceadsl.fr</a>", "48 à 64 euros", "2 épis", "10 chambres", "<a href=\"http://www.aubergedelabaume.com/bienvenue.htm\">Site</a>"], "Lat":47.814773, "Lng":4.429224},
+{"Id":"htelLeMagiot", "Type":"hotel", "Nom":"Hôtel le Magiot", "Adresse": "Rue de Magiot 21400 Montliot-et-Courcelles", "Telephone": "03 80 91 20 51", "Infos":["<a href=\"mailto:lemagiot@wanadoo.fr\">lemagiot@wanadoo.fr</a>", "à partir de 45 euros, tarif famille", "2 étoiles", "22 chambres", "<a href=\"http://le-magiot-hotel-soiree-etape-seminaire-restaurant.lemagiot-21.com/\">Site</a>"], "Lat":47.89003, "Lng":4.560327},
+{"Id":"chezJozephine", "Type":"gite", "Nom":"Chez Jozephine", "Adresse": "10 Rue Pissepot, Nod-sur-Seine", "Telephone": "03.80.93.25.48", "Infos":["<a href=\"mailto:chez.Jozefine@orange.fr\">chez.Jozefine@orange.fr</a>", "195 euros le week end", "3 épis", "6 personnes", "<a href=\"http://chez.jozefine.free.fr/\">Site</a>"], "Lat":47.765922, "Lng":4.572939},
+{"Id":"gteDeNod", "Type":"gite", "Nom":"Gîte de Nod", "Adresse": "4 Rue haute, Nod-sur-Seine", "Telephone": "03 80 93 25 89", "Infos":["<a href=\"mailto:gitedenod@orange.fr\">gitedenod@orange.fr</a>", "Trois étoiles", "48 euros pour 2 + 8 personnes supplémentaires", "1 chambre", "4 personnes"], "Lat":47.765878, "Lng":4.573694},
+{"Id":"gteDeLaJonction", "Type":"gite", "Nom":"Gîte de la jonction", "Adresse": "6 rue de l'église, Nod-sur-Seine", "Telephone": "03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "150 euros le WE", "2 chambres de 2 places", "4 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G821.html\">Site</a>"], "Lat":47.766855, "Lng":4.572954},
+{"Id":"laMarchalerie", "Type":"gite", "Nom":"La Maréchalerie", "Adresse": "1 Rue des étriers, Coulmier le Sec", "Telephone": "03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "420 euros le WE", "3 épis", "5 chambres", "11 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G751.html\">Site</a>"], "Lat":47.749809, "Lng":4.495084},
+{"Id":"laChenevireBernadetteRioux", "Type":"gite", "Nom":"La Chenevière / Bernadette Rioux", "Adresse": "Rue du moulin, Saint-Germain le Rocheux", "Telephone": "01-64-46-43-78", "Infos":["<a href=\"mailto:danriou@club-internet.fr\">danriou@club-internet.fr</a>", "1 chambre", "4 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G45.html\">Site</a>"], "Lat":47.749966, "Lng":4.668165},
+{"Id":"leMoulinDeSaintGermain", "Type":"gite", "Nom":"Le Moulin de Saint Germain", "Adresse": "Le moulin, Saint-Germain le Rocheux", "Telephone": "03 80 93 29 70", "Infos":["2 gîtes, 2 chambres d'hôtes", "2 à 8 personnes", "<a href=\"http://www.moulin-de-saint-germain.com/petitgite.html\">Site</a>"], "Lat":47.749966, "Lng":4.668165},
+{"Id":"laGrangeDeLaChouette", "Type":"gite", "Nom":"La grange de la chouette", "Adresse": "1 Rue du Roy, Saint-Germain le Rocheux", "Telephone": "03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "3 épis", "400 le WE", "4 chambres", "8 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G838.html\">Site</a>"], "Lat":47.755118, "Lng":4.674498},
+{"Id":"jeanEtFranoiseMillot", "Type":"gite", "Nom":"Jean et Françoise Millot", "Adresse": "11 Rue du recept, Chatillon sur Seine", "Telephone": "03 80 81 50 65", "Infos":["<a href=\"mailto:francoisedelery@wanadoo.fr\">francoisedelery@wanadoo.fr</a>", "2 personnes"], "Lat":47.858172, "Lng":4.574733},
+{"Id":"gteSansNom", "Type":"gite", "Nom":"Gîte sans nom ???", "Adresse": "2 chemin de la Combe des Paces, Chatillon sur Seine", "Telephone": " 03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "2 épis", "150 euros le WE", "4 personnes"], "Lat":47.863037, "Lng":4.581619},
+{"Id":"gteSansNomAussi", "Type":"gite", "Nom":"Gîte sans nom aussi ???", "Adresse": "Cosne, 4 route de Baigneux, Quemigny-sur-seine", "Telephone": "03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "120 euros le WE", "4 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G454.html\">Site</a>"], "Lat":47.674306, "Lng":4.669693},
+{"Id":"gteDeLaPierrePerce", "Type":"gite", "Nom":"Gîte de la pierre percée", "Adresse": "2 chemin de la roche, Ampilly-lès-Bordes", "Telephone": "03-80-96-54-55", "Infos":["<a href=\"mailto:martine.babouillard@hotmail.fr\">martine.babouillard@hotmail.fr</a>", "3 épis", "490 euros le WE", "11 personnes", "<a href=\"http://gites-sourcesdeseine.com/\">Site</a>"], "Lat":47.632242, "Lng":4.628902},
+{"Id":"gteDeLaRoche", "Type":"gite", "Nom":"Gîte de la Roche", "Adresse": "4 chemin de la Roche, Ampilly-lès-Bordes", "Telephone": "06 88 03 89 18", "Infos":["4 épis", "620 euros le WE", "13 personnes"], "Lat":47.632772, "Lng":4.629264},
+{"Id":"laPlanchotte", "Type":"gite", "Nom":"La Planchotte", "Adresse": "Rue Voriot, Jours les Baigneux", "Telephone": "03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "3 épis", "255 euros le WE", "3 chambres", "6 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G396.html\">Site</a>"], "Lat":47.59846, "Lng":4.649319},
+{"Id":"laRoseraie", "Type":"gite", "Nom":"La Roseraie", "Adresse": "8 route de Montbard, Savoisy", "Telephone": "03.80.45.97.15", "Infos":["<a href=\"mailto:gites.de.france21@wanadoo.fr\">gites.de.france21@wanadoo.fr</a>", "2 épis", "190 euros le WE", "3 chambres", "5 personnes", "<a href=\"http://www.gites-de-france-cotedor.com/fiche-hebergement-21G156.html\">Site</a>"], "Lat":47.77587, "Lng":4.354831},
+{"Id":"gteDeLaColombe", "Type":"gite", "Nom":"Gîte de la Colombe", "Adresse": "4, rue des Chagners, Sainte-Colombe-sur-Seine", "Telephone": "03.80.91.17.65 / 06.16.95.16.10", "Infos":["<a href=\"mailto:jean-claude.tissaux@wanadoo.fr\">jean-claude.tissaux@wanadoo.fr</a>", "2 épis", "190 euros le WE", "2 chambres", "6 personnes"], "Lat":47.871046, "Lng":4.541362},
+{"Id":"cottageDeBourgogne", "Type":"chambredhote", "Nom":"Cottage de Bourgogne", "Adresse": "4 Rue de la Maison Commune, Ampilly-le-sec", "Telephone": "03 80 91 14 79 / 06 72 62 00 99", "Infos":["<a href=\"mailto:beatrice.guichardot@free.fr\">beatrice.guichardot@free.fr</a>", "de 45 à 65 euros", "1 chambre", "1 à 3 personnes        ", "<a href=\"http://www.cottagedebourgogne.com/\">Site</a>"], "Lat":47.809215, "Lng":4.530745},
+{"Id":"letrier", "Type":"chambredhote", "Nom":"L'etrier", "Adresse": "9 Rue des étriers, Coulmier-le-sec", "Telephone": "03.80.81.30.56", "Infos":["<a href=\"mailto:fr.21@orange.fr\">fr.21@orange.fr</a>", "3 épis", "de 40 à 90 euros", "3 chambres", "1 à 5 personnes", "<a href=\"http://www.chambres-d-hotes-l-etrier.com/\">Site</a>"], "Lat":47.749809, "Lng":4.495084},
+{"Id":"leSoleilDor", "Type":"chambredhote", "Nom":"Le Soleil d'or", "Adresse": "12 route de Dijon, Saint-Marc sur Seine", "Telephone": "03 80 81 69 23", "Infos":["<a href=\"mailto:le-soleil-dor@hotmail.co.uk\">le-soleil-dor@hotmail.co.uk</a>", "à partir de 46 euros", "3 chambres", "2 à 4 personnes", "<a href=\"http://le-soleil-dor.yolasite.com/\">Site</a>"], "Lat":47.747875, "Lng":4.583978},
+{"Id":"mEtMmePhilipps", "Type":"chambredhote", "Nom":"M et Mme Philipps", "Adresse": "13 rue Appolinaire, Chatillon sur Seine", "Telephone": "03 80 81 53 95 ", "Infos":["60 euros", "3 chambres", "1 à 2 personnes"], "Lat":47.858166, "Lng":4.589093},
+{"Id":"mmeAubry", "Type":"chambredhote", "Nom":"Mme Aubry ", "Adresse": "Ferme de Cessey, Jours-lès-Baigneux ", "Telephone": "03 80 96 51 89", "Infos":["<a href=\"mailto:marie-therese.aubry734@orange.fr\">marie-therese.aubry734@orange.fr</a>", "2 chambres 2 personnes        "], "Lat":47.59846, "Lng":4.649319},
+{"Id":"leRelaisDeMorville", "Type":"chambredhote", "Nom":"Le relais de Morville", "Adresse": "1 grande rue / morville, Fresnes", "Telephone": "03-80-92-12-76", "Infos":["<a href=\"mailto:relais21@orange.fr\">relais21@orange.fr</a>", "45 euros", "5 chambres 2 personnes", "<a href=\"http://le.relais.pagesperso-orange.fr/\">Site</a>"], "Lat":48.757205, "Lng":2.326243},
+{"Id":"leNidDakiko", "Type":"chambredhote", "Nom":"Le nid d'Akiko", "Adresse": "9 rue du huit mai 1945, Laignes", "Telephone": "03 80 81 47 46 / 06 72 74 99 36", "Infos":["<a href=\"mailto:lenidakiko@free.fr\">lenidakiko@free.fr</a>", "de 57 à 87 euros", "3 chambres", "2 à 5 personnes        "], "Lat":47.847146, "Lng":4.365972},
 			];
 
 			var allMarkers = {};
@@ -525,6 +552,7 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 					$(".SelectedLogis").removeClass("SelectedLogis");
 					$.each( allMarkers, function( key, value ) {
 						value["mapWindow"].close();
+						value["mapMarker"]["clicked"] = false;
 					});
 					mapLogis.setCenter(newmarker.getPosition()); 
 					if (!newInfoWindow.getMap()) {

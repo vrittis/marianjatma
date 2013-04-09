@@ -167,13 +167,25 @@ margin-left: 20px;
 	border-bottom-right-radius: 4px;
 }
 
+.illustration {
+	position: relative;
+}
+
+#secret_illustration
+{
+	background: fixed;
+	height: 0px;
+}
 
 #mainevent_illustration
 {
 	background-image: url(../img/mariage.jpg);
-	background-position: right top;
+	background-position: left top;
 	background-repeat: no-repeat;
-	background-size: cover;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
 }
 
 #quand_illustration
@@ -191,16 +203,6 @@ margin-left: 20px;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
-/*
-#logis_illustration
-{
-	background-image: url(../img/Igor.jpg);
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-*/
 
 #dresscode_illustration
 {
@@ -224,6 +226,13 @@ margin-left: 20px;
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+#secret_illustration
+{
+	background-image: url(../img/cream_dust/cream_dust.png);
+	background-position: top left;
+	background-attachment: fixed;
 }
 
 /* correctif google maps et bootstrap */
