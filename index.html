@@ -171,7 +171,7 @@
 			<div class="block" id="liste">
 			<div >
 				<h2>Avez-vous une liste de mariage?</h2>
-				<pre style=display:none">
+				<pre style="display:none">
 Autrefois pour faire sa cour
 On parlait d'amour
 Pour mieux prouver son ardeur
@@ -275,10 +275,11 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
     ================================================== -->
 	<script src="./bootstrap/js/jquery.js" type="text/javascript"></script> <!-- jquery from bootstrap -->
     <script src="./bootstrap/js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=fr"></script>
+	<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=fr"></script>-->
     <script>
-	var booh = null;
 		$(function() {
+		
+			/* SCROLL STUFF */
 		
 			var SideBar = $("#company");
 			var Illustrations = $("#company .illustration");
@@ -292,8 +293,7 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 				Blocks.css("min-height", bodyheight);
 				SideBar.width($(window).width() - Main.width());
 			}
-			
-			
+						
 			var calculateTopIllustration = function() {
 				var topValue = $($("li.menu_entry.active a").attr('href') + "_illustration")[0].offsetTop;
 				SideBar.animate({top: topValue * -1 + 40}, 300);
@@ -318,46 +318,8 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 				calculateTopIllustration();
 			});
 			
+			/* TIMING STUFF */
 			
-			var LatLngChatillonSurSeine = new google.maps.LatLng(47.860455, 4.573714);
-			var LatLngAiseyBonEspoir = new google.maps.LatLng(47.755541,4.56512);
-			
-			var mapOptions = {
-				zoom: 7,
-				streetViewControl: false,
-				center: LatLngChatillonSurSeine,
-				mapTypeId: google.maps.MapTypeId.ROADMAP 
-			};
-			var mapIllustration = new google.maps.Map(document.getElementById('ou_illustration'), mapOptions);
-			var mapMobile = new google.maps.Map(document.getElementById('mobile_map'), mapOptions);
-			
-			var mapLogisOptions = {
-				zoom: 10,
-				streetViewControl: false,
-				center: LatLngChatillonSurSeine,
-				mapTypeId: google.maps.MapTypeId.ROADMAP 
-			};
-			var mapLogis = new google.maps.Map(document.getElementById('logis_illustration'), mapLogisOptions);
-			booh = mapLogis;
-			/* les amrkers sur la carte de la mairie */
-			var markerIllustration = new google.maps.Marker({
-				position: LatLngChatillonSurSeine,
-				map: mapIllustration,
-				title: 'C\'est ici!'
-			});
-			var markerMobile = new google.maps.Marker({
-				position: LatLngChatillonSurSeine,
-				map: mapMobile,
-				title: 'C\'est ici!'
-			});
-			
-			/* les markers sur la carte de bon espoir */
-			var markerBonEspoir = new google.maps.Marker({
-				position: LatLngAiseyBonEspoir,
-				map: mapLogis,
-				title: 'Vin d\'honneur et repas'
-			});
-					
 			function daysTill() {
 			  //----------  EDIT THE VARIABLES BELOW  ------------------
 			  // EDIT THE VARIABLES BELOW
@@ -378,6 +340,7 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 			/* combien de jours? */
 			$("#remainingDays").text(daysTill().toString());
 			
+			/* TEMPLATE STUFF */
 			
 			/* templating! Rick Strahl's */
 			var _tmplCache = {}
@@ -429,24 +392,86 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 				return ""; //"< # ERROR: " + err.htmlEncode() + " # >";
 			}
 			
+			
+			
+			
+		window.initializeMaps = function() {
+		 /* MAP STUFF */
+			
+			var markerPath = "./img/markers/";
+			var markerShadow = {
+				url: markerPath + 'shadow.png',
+				anchor: new google.maps.Point(12, 20)
+			};
+
+			
+			var LatLngChatillonSurSeine = new google.maps.LatLng(47.860455, 4.573714);
+			var LatLngAiseyBonEspoir = new google.maps.LatLng(47.755541,4.56512);
+			
+			var mapOptions = {
+				zoom: 7,
+				streetViewControl: false,
+				center: LatLngChatillonSurSeine,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				scaleControl: true
+			};
+			var mapIllustration = new google.maps.Map(document.getElementById('ou_illustration'), mapOptions);
+			var mapMobile = new google.maps.Map(document.getElementById('mobile_map'), mapOptions);
+			
+			var mapLogisOptions = {
+				zoom: 10,
+				streetViewControl: false,
+				center: LatLngChatillonSurSeine,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				scaleControl: true
+			};
+			var mapLogis = new google.maps.Map(document.getElementById('logis_illustration'), mapLogisOptions);
+
+			/* les markers sur la carte de la mairie */
+			var markerIllustration = new google.maps.Marker({
+				position: LatLngChatillonSurSeine,
+				map: mapIllustration,
+				title: "C'est ici qu'on se marie!",
+				icon: markerPath + "wedding.png",
+				shadow: markerShadow
+			});
+			var markerMobile = new google.maps.Marker({
+				position: LatLngChatillonSurSeine,
+				map: mapMobile,
+				title: "C'est ici qu'on se marie!",
+				icon: markerPath + "wedding.png",
+				shadow: markerShadow
+			});
+			
+			/* les markers sur la carte de bon espoir */
+			var markerBonEspoir = new google.maps.Marker({
+				position: LatLngAiseyBonEspoir,
+				map: mapLogis,
+				title: "Vin d'honneur et repas",
+				icon: markerPath + "party.png",
+				shadow: markerShadow
+			});
+
 			/* ok, maintenant peuplons les logis :) */
 			var logis = [
-				{"Id":"htelDeLaCtedor", "Nom":"Hôtel de La Côte-d'or", "Adresse": "2, rue Charles Ronot, Chatillon sur Seine", "Telephone": "03 80 91 13 29", "Infos":["email: remillet.gerard@club-internet.fr", "hôtel trois étoiles", "70-80€ la chambre", "9 chambres"], "Lat":47.858302, "Lng":4.571176},
-{"Id":"htelLaMontagne", "Nom":"Hôtel La Montagne", "Adresse": "12, rue Maréchal de Lattre de Tassigny, Chatillon sur Seine", "Telephone": "03 80 91 10 61", "Infos":["40€ la chambre", "12 chambres", "http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html"], "Lat":48.78732, "Lng":2.232771},
-{"Id":"leSaintVorles", "Nom":"Le Saint Vorles", "Adresse": "1, Rue prés Carnot, Chatillon sur Seine", "Telephone": "03 80 81 55 83", "Infos":["à partir de 47€"], "Lat":47.860494, "Lng":4.573197},
-{"Id":"htelDuChevalRouge", "Nom":"Hôtel du Cheval rouge", "Adresse": "4 place du 8 Mai 1945, Chatillon sur Seine", "Telephone": "03 80 81 53 70", "Infos":["à partir de 43€"], "Lat":47.859777, "Lng":4.571696},
-{"Id":"sylviaHotel", "Nom":"Sylvia Hotel", "Adresse": "9 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 02 44", "Infos":["<a href=\"mailto:bob@bob.fr\">sylviahotel@wanadoo.fr</a>", "hôtel deux étoiles", "57€ la chambre", "17 chambres"], "Lat":47.867401, "Lng":4.573138},
-{"Id":"tipazaExOllin", "Nom":"Tipaza (ex Ollin)", "Adresse": "32 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 28 25", "Infos":["aucune note"], "Lat":47.868996, "Lng":4.572561},
-{"Id":"htelrestaurantDeLaPoste", "Nom":"Hôtel-restaurant de la Poste", "Adresse": "6, rue Amont, Villaines en duesmois", "Telephone": "03 80 89 03 01", "Infos":["à partir de 50€", "4 chambres"], "Lat":47.680631, "Lng":4.525489},
+				{"Id":"htelDeLaCtedor", "Type":"hotel", "Nom":"Hôtel de La Côte-d'or", "Adresse": "2, rue Charles Ronot, Chatillon sur Seine", "Telephone": "03 80 91 13 29", "Infos":["email: remillet.gerard@club-internet.fr", "hôtel trois étoiles", "70-80€ la chambre", "9 chambres"], "Lat":47.858302, "Lng":4.571176},
+				{"Id":"htelLaMontagne", "Type":"hotel", "Nom":"Hôtel La Montagne", "Adresse": "12, rue Maréchal de Lattre de Tassigny, Chatillon sur Seine", "Telephone": "03 80 91 10 61", "Infos":["40€ la chambre", "12 chambres", "http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html"], "Lat":48.78732, "Lng":2.232771},
+				{"Id":"leSaintVorles", "Type":"hotel", "Nom":"Le Saint Vorles", "Adresse": "1, Rue prés Carnot, Chatillon sur Seine", "Telephone": "03 80 81 55 83", "Infos":["à partir de 47€"], "Lat":47.860494, "Lng":4.573197},
+				{"Id":"htelDuChevalRouge", "Type":"hotel", "Nom":"Hôtel du Cheval rouge", "Adresse": "4 place du 8 Mai 1945, Chatillon sur Seine", "Telephone": "03 80 81 53 70", "Infos":["à partir de 43€"], "Lat":47.859777, "Lng":4.571696},
+				{"Id":"sylviaHotel", "Type":"hotel", "Nom":"Sylvia Hotel", "Adresse": "9 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 02 44", "Infos":["email: sylviahotel@wanadoo.fr", "hôtel deux étoiles", "57€ la chambre", "17 chambres"], "Lat":47.867401, "Lng":4.573138},
+				{"Id":"tipazaExOllin", "Type":"hotel", "Nom":"Tipaza (ex Ollin)", "Adresse": "32 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 28 25", "Infos":["aucune note"], "Lat":47.868996, "Lng":4.572561},
+				{"Id":"htelrestaurantDeLaPoste", "Type":"chambredhote", "Nom":"Hôtel-restaurant de la Poste", "Adresse": "6, rue Amont, Villaines en duesmois", "Telephone": "03 80 89 03 01", "Infos":["à partir de 50€", "4 chambres"], "Lat":47.680631, "Lng":4.525489},
 			];
 
-			var allMarkers = {};//{"sample": {"mapMarker": null, "mapWindow": null, "domElement": null}};
+			var allMarkers = {};
 			
 			function createMarker(logisInfos) {
 				var newmarker = new google.maps.Marker({
 					position: new google.maps.LatLng(logisInfos["Lat"], logisInfos["Lng"]),
 					map: mapLogis,
-					title: "" //logisInfos["Nom"] + " - " + logisInfos["Adresse"]
+					title: "",
+					icon: markerPath + logisInfos["Type"] +".png",
+					shadow: markerShadow
 				});
 				newmarker["clicked"] = false;
 
@@ -517,6 +542,17 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 				createMarker(this);
 			});
 			
+			refreshScrollSpy();
+		}
+
+		function loadScript() {
+		  var script = document.createElement("script");
+		  script.type = "text/javascript";
+		  script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=fr&callback=initializeMaps";
+		  document.body.appendChild(script);
+		}
+
+		window.onload = loadScript;
 			
 		});
 
