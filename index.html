@@ -110,13 +110,13 @@
 			<div >
 				<h2>Où?</h2>
 				<p><img src="img/x.jpg" title="Merci Junior!"/></p>
-				<p>Le mariage se déroulera à la Mairie de <strong>Chatillon sur Seine</strong>, à 1h de Dijon et 2h30 de Paris.</p>
+				<p>Le mariage se déroulera à la Mairie de <strong class="ObnoxiousMe focusOnChatillon">Chatillon sur Seine</strong>, à 1h de Dijon et 2h30 de Paris.</p>
 				<div id="mobile_map" class="visible-phone map">
 				</div>
 				<p>Comment venir?</p>
 				<ul>
 				<li><strong>en voiture</strong>: Les doux vallons de l'autoroute A5 et A6 peuvent nous amener à nous.</li>
-				<li><strong>en train</strong>: La gare la plus proche de Chatillon sur Seine se trouve à Montbard, et un service de bus relie les deux villes. Si vous avez besoin de transport entre Montbard et Chatillon sur Seine, faites-le nous savoir.
+				<li><strong>en train</strong>: La gare la plus proche de Chatillon sur Seine se trouve à <strong class="ObnoxiousMe focusOnMontbard">Montbard</strong>, et un service de bus relie les deux villes. Si vous avez besoin de transport entre Montbard et Chatillon sur Seine, <a href="#contact">faites-le nous savoir</a>.
 				</li>
 				</ul>
 			</div>
@@ -125,7 +125,7 @@
 			<div class="block" id="quand" >
 			<div>
 				<h2>Quand?</h2>
-				<p>Réglez vos calendriers sur le 21 septembre 2013, à 16h. Pour les plus précis d'entre vous c'est dans <span id="remainingDays"></span> jours!</p>
+				<p>Réglez vos calendriers sur le 21 septembre 2013, à 16h. Pour les plus précis d'entre vous c'est <span id="farFuture">dans <span id="remainingDays"></span> jours!</span><span id="tomorrow">demain!!</span><span id="today">AUJOURD'HUI!!1!!OMFG!!!</span><span id="past">passé... mais le Doc peut vous aider :)</span></p>
 			</div>
 			</div>
 			
@@ -144,18 +144,18 @@
 			<div >
 				<h2>Quel est le dresscode?</h2>
 				<p>Notre humour facétieux et sophistiqué pourrait nous pousser à prôner le costume de poulet ou les maillots de bain. Néammoins c'est une question sérieuse aussi nous répondrons simplement qu'il n'y a pas de dresscode particulier demandé pour les invités.</p>
-				<p>Prévoyez quand même une petite laine au cas ou l'automne soit particulièrement brumeux.</p>
+				<p>Prévoyez quand même une petite laine au cas ou l'automne serait particulièrement brumeux.</p>
 			</div>
 			</div>
 
 			<div class="block" id="logis">
 			<div >
 				<h2>Où peut-on loger?</h2>
-				<p>Une liste d'hôtels/gîtes/chambres d'hôte à proximité du lieu du vin d'honneur et du repas est disponible ci-dessous. Cliquez sur un lieu pour le voir sur la carte:</p>
+				<p>Une liste d'hôtels/gîtes/chambres d'hôte à proximité du <span class="ObnoxiousMe focusOnBonEspoir">lieu du vin d'honneur et du repas</span> est disponible ci-dessous. Cliquez sur un lieu pour le voir sur la carte:</p>
 				<ul id="logements">
 					
 				</ul>
-				<p>Il est possible de camper sur les lieux du mariage pour les afficionados de la toile de tente. Merci de nous prévenir si vous choisissez cette solution.</p>
+				<p>Il est possible de camper sur les lieux du mariage pour les afficionados de la toile de tente. Merci de nous <a href="#contact">prévenir</a> si vous choisissez cette solution.</p>
 			</div>
 			</div>
 			
@@ -171,7 +171,7 @@
 			<div class="block" id="liste">
 			<div >
 				<h2>Avez-vous une liste de mariage?</h2>
-				<pre style="display:none">
+				<pre>
 Autrefois pour faire sa cour
 On parlait d'amour
 Pour mieux prouver son ardeur
@@ -341,7 +341,12 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 			}
 			
 			/* combien de jours? */
-			$("#remainingDays").text(daysTill().toString());
+			var daysRemaining = daysTill().toString();
+			$("#remainingDays").text(daysRemaining);
+			daysRemaining > 1 ? $("#farFuture").show():$("#farFuture").hide();
+			daysRemaining == 1 ? $("#tomorrow").show():$("#tomorrow").hide();
+			daysRemaining == 0 ? $("#today").show():$("#today").hide();
+			daysRemaining < 0 ? $("#past").show():$("#past").hide();
 			
 			/* TEMPLATE STUFF */
 			
@@ -410,6 +415,7 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 			
 			var LatLngChatillonSurSeine = new google.maps.LatLng(47.860452,4.573714);
 			var LatLngAiseyBonEspoir = new google.maps.LatLng(47.755639,4.562616);
+			var LatLngMontbard = new google.maps.LatLng(47.618661,4.336338);
 			
 			var mapOptions = {
 				zoom: 7,
@@ -455,10 +461,24 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 				shadow: markerShadow
 			});
 
+			
+			/* les clics sur les obnoxious doivent centrer la carte */
+			$(".focusOnChatillon").on("click", function() { mapIllustration.setCenter(LatLngChatillonSurSeine); mapMobile.setCenter(LatLngChatillonSurSeine); });
+			$(".focusOnMontbard").on("click", function() { 
+				mapIllustration.setCenter(LatLngMontbard); 
+				mapMobile.setCenter(LatLngMontbard); 
+				var newInfoWindow = new google.maps.InfoWindow({
+						content: "Ici, la gare de Montbard! Tadam!",
+						position : LatLngMontbard
+					});
+				newInfoWindow.open(mapIllustration);
+			});
+			$(".focusOnBonEspoir").on("click", function() { mapLogis.setCenter(LatLngAiseyBonEspoir); });
+			
 			/* ok, maintenant peuplons les logis :) */
 			var logis = [
-				{"Id":"htelDeLaCtedor", "Type":"hotel", "Nom":"Hôtel de La Côte-d'or", "Adresse": "2, rue Charles Ronot, Chatillon sur Seine", "Telephone": "03 80 91 13 29", "Infos":["<a href=\"mailto:remillet.gerard@club-internet.fr\">remillet.gerard@club-internet.fr</a>", "Trois étoiles", "70-80€ la chambre", "9 chambres"], "Lat":47.858302, "Lng":4.571176},
-{"Id":"htelLaMontagne", "Type":"hotel", "Nom":"Hôtel La Montagne", "Adresse": "12, rue Maréchal de Lattre de Tassigny, Chatillon sur Seine", "Telephone": "03 80 91 10 61", "Infos":["40€ la chambre", "12 chambres", "<a href=\"http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html\">Site</a>"], "Lat":48.78732, "Lng":2.232771},
+				{"Id":"htelDeLaCtedor", "Type":"hotel", "Nom":"Hôtel de La Côte-d'or", "Adresse": "2 Rue Charles Ronot, Chatillon sur Seine", "Telephone": "03 80 91 13 29", "Infos":["<a href=\"mailto:remillet.gerard@club-internet.fr\">remillet.gerard@club-internet.fr</a>", "Trois étoiles", "70-80€ la chambre", "9 chambres"], "Lat":47.858302, "Lng":4.571176},
+{"Id":"htelLaMontagne", "Type":"hotel", "Nom":"Hôtel La Montagne", "Adresse": "12 Rue Maréchal de Lattre, Chatillon sur Seine", "Telephone": "03 80 91 10 61", "Infos":["40€ la chambre", "12 chambres", "<a href=\"http://www.hotel-restaurant-lamontagne.com/hotel-chatillon-sur-seine-restaurant-bourgogne-21.html\">Site</a>"], "Lat":47.859744, "Lng":4.572459},
 {"Id":"leSaintVorles", "Type":"hotel", "Nom":"Le Saint Vorles", "Adresse": "1, Rue prés Carnot, Chatillon sur Seine", "Telephone": "03 80 81 55 83", "Infos":["à partir de 47€"], "Lat":47.860494, "Lng":4.573197},
 {"Id":"htelDuChevalRouge", "Type":"hotel", "Nom":"Hôtel du Cheval rouge", "Adresse": "4 place du 8 Mai 1945, Chatillon sur Seine", "Telephone": "03 80 81 53 70", "Infos":["à partir de 43€"], "Lat":47.859777, "Lng":4.571696},
 {"Id":"sylviaHotel", "Type":"hotel", "Nom":"Sylvia Hotel", "Adresse": "9 avenue de la gare, Chatillon sur Seine", "Telephone": "03 80 91 02 44", "Infos":["<a href=\"mailto:sylviahotel@wanadoo.fr\">sylviahotel@wanadoo.fr</a>", "Deux étoiles", "57€ la chambre", "17 chambres"], "Lat":47.867401, "Lng":4.573138},
@@ -486,8 +506,8 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 {"Id":"leSoleilDor", "Type":"chambredhote", "Nom":"Le Soleil d'or", "Adresse": "12 route de Dijon, Saint-Marc sur Seine", "Telephone": "03 80 81 69 23", "Infos":["<a href=\"mailto:le-soleil-dor@hotmail.co.uk\">le-soleil-dor@hotmail.co.uk</a>", "à partir de 46 euros", "3 chambres", "2 à 4 personnes", "<a href=\"http://le-soleil-dor.yolasite.com/\">Site</a>"], "Lat":47.747875, "Lng":4.583978},
 {"Id":"mEtMmePhilipps", "Type":"chambredhote", "Nom":"M et Mme Philipps", "Adresse": "13 rue Appolinaire, Chatillon sur Seine", "Telephone": "03 80 81 53 95 ", "Infos":["60 euros", "3 chambres", "1 à 2 personnes"], "Lat":47.858166, "Lng":4.589093},
 {"Id":"mmeAubry", "Type":"chambredhote", "Nom":"Mme Aubry ", "Adresse": "Ferme de Cessey, Jours-lès-Baigneux ", "Telephone": "03 80 96 51 89", "Infos":["<a href=\"mailto:marie-therese.aubry734@orange.fr\">marie-therese.aubry734@orange.fr</a>", "2 chambres 2 personnes        "], "Lat":47.59846, "Lng":4.649319},
-{"Id":"leRelaisDeMorville", "Type":"chambredhote", "Nom":"Le relais de Morville", "Adresse": "1 grande rue / morville, Fresnes", "Telephone": "03-80-92-12-76", "Infos":["<a href=\"mailto:relais21@orange.fr\">relais21@orange.fr</a>", "45 euros", "5 chambres 2 personnes", "<a href=\"http://le.relais.pagesperso-orange.fr/\">Site</a>"], "Lat":48.757205, "Lng":2.326243},
-{"Id":"leNidDakiko", "Type":"chambredhote", "Nom":"Le nid d'Akiko", "Adresse": "9 rue du huit mai 1945, Laignes", "Telephone": "03 80 81 47 46 / 06 72 74 99 36", "Infos":["<a href=\"mailto:lenidakiko@free.fr\">lenidakiko@free.fr</a>", "de 57 à 87 euros", "3 chambres", "2 à 5 personnes        "], "Lat":47.847146, "Lng":4.365972},
+{"Id":"leRelaisDeMorville", "Type":"chambredhote", "Nom":"Le relais de Morville", "Adresse": "1 Grande Rue 21500 Fresnes", "Telephone": "03-80-92-12-76", "Infos":["<a href=\"mailto:relais21@orange.fr\">relais21@orange.fr</a>", "45 euros", "5 chambres 2 personnes", "<a href=\"http://le.relais.pagesperso-orange.fr/\">Site</a>"], "Lat":47.615563, "Lng":4.429065},
+{"Id":"leNidDakiko", "Type":"chambredhote", "Nom":"Le nid d'Akiko", "Adresse": "9 rue du huit mai 1945, Laignes", "Telephone": "03 80 81 47 46 / 06 72 74 99 36", "Infos":["<a href=\"mailto:lenidakiko@free.fr\">lenidakiko@free.fr</a>", "de 57 à 87 euros", "3 chambres", "2 à 5 personnes"], "Lat":47.847146, "Lng":4.365972},
 			];
 
 			var allMarkers = {};
@@ -544,7 +564,7 @@ Et l'on vit comme ça jusqu'à la prochaine fois</pre>
 				
 				google.maps.event.addListener(newInfoWindow, 'clickclose', function() {
 					this['marker']['clicked'] = false;
-					this['control'].removeClass("SelectedLogis");
+					$(this['control']).removeClass("SelectedLogis");
 					this.close();
 				});
 				

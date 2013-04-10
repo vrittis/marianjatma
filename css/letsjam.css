@@ -78,6 +78,16 @@ margin-left: 20px;
     line-height: 30px;
 }
 
+/* spécifique localisation manuelle */
+.ObnoxiousMe {
+	border-bottom: 4px dotted silver;
+}
+
+.ObnoxiousMe:hover {
+	border-bottom: 4px solid silver;
+	cursor: pointer;
+}
+
 /* spécifique logis */
 #content #main ul#logements
 {
@@ -139,7 +149,7 @@ margin-left: 20px;
 
 #content #main #logements .Logis .AdditionalData a
 {
-	color: #FF8205;
+	color: #FFCA96;
 }
 
 #content #main #logements .SelectedLogis
