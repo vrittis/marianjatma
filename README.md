@@ -1,7 +1,7 @@
 ﻿marianjatma
 ===========
 ===RAF===
-* recompresser et combiner les images, les scripts et les css
+* recompresser et combiner les ~~images~~, les scripts et les css
 * passage secret KC
 * utiliser uniquement un infoWindow pour les logis (très très optionnel, tester sous IE et Chrome)
 * ~~vérifier la geoloc sur les hôtels~~
