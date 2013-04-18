@@ -325,4 +325,6 @@
 			
 			// on fixe les dimensions une dernière fois (bug des 15%)
 			changeDimensions();
+			// cough...
+			new Konami('http://www.google.com');
 		});
