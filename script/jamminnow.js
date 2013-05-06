@@ -309,9 +309,11 @@
 			});
 			
 			// on recommence, encore et encore, le début, d'accord, d'accord, etc... Si je codais mieux ça devrait pouvoir s'emballer qqpart...
-			//changeDimensions();
-			/*calculateTopIllustration();*/
+			/*changeDimensions();
+			calculateTopIllustration();*/
 			refreshScrollSpy();
+			$('html,body').animate({scrollTop: $(window.location.hash).offset().top},'fast'); // hack à cause de l'injection des hotels
+			new Konami('http://www.google.com');
 		}
 
 		function loadScript() {
@@ -319,6 +321,7 @@
 		  script.type = "text/javascript";
 		  script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=fr&callback=initializeMaps";
 		  document.body.appendChild(script);
+		  refreshScrollSpy();
 		}
 
 			window.onload = loadScript;
