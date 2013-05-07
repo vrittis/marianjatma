@@ -313,7 +313,6 @@
 			calculateTopIllustration();*/
 			refreshScrollSpy();
 			$('html,body').animate({scrollTop: $(window.location.hash).offset().top},'fast'); // hack à cause de l'injection des hotels
-			new Konami('http://www.google.com');
 		}
 
 		function loadScript() {
@@ -329,5 +328,4 @@
 			// on fixe les dimensions une dernière fois (bug des 15%)
 			changeDimensions();
 			// cough...
-			new Konami('http://www.google.com');
 		});
