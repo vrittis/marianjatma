@@ -350,6 +350,7 @@ Et nous serons heureux!">
   
   var easter_egg = new Konami(function() {
 		$('#hello_there').modal('show'); 
+		$("#surprise")[0].src += "&autoplay=1";
 	});
 	$('#hello_there').on('show', function () {
 			toggleVideo("");
