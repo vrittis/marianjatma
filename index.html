@@ -139,6 +139,7 @@
 				<ul>
 					<li><strong>par email</strong>: <a href="mailto:mariage@beaudoux.net">mariage@beaudoux.net</a></li>
 					<li><strong>par courrier</strong>: Anne-Gaëlle Donnet et Samy Beaudoux, 8 rue Seguin, 69002 Lyon</li>
+					<li><strong>adresse du jour</strong>: Ferme de Bon Espoir, Route d’Aisey à Coulmier le Sec  21400 Aisey sur Seine
 				</ul>
 			</div>
 			</div>
@@ -154,7 +155,7 @@
 			<div class="block" id="logis">
 			<div >
 				<h2>Où peut-on loger?</h2>
-				<p>Une liste d'hôtels/gîtes/chambres d'hôte à proximité du <span class="ObnoxiousMe focusOnBonEspoir">lieu du vin d'honneur et du repas</span> est disponible ci-dessous. Cliquez sur un lieu pour le voir sur la carte:</p>
+				<p>Une liste d'hôtels/gîtes/chambres d'hôte à proximité du <span class="ObnoxiousMe focusOnBonEspoir" title="Ferme de Bon-espoir">lieu du vin d'honneur et du repas</span> est disponible ci-dessous. Cliquez sur un lieu pour le voir sur la carte:</p>
 				<ul id="logements">
 					
 				</ul>
@@ -350,14 +351,14 @@ Et nous serons heureux!">
   
   var easter_egg = new Konami(function() {
 		$('#hello_there').modal('show'); 
-		$("#surprise")[0].src += "&autoplay=1";
+		$("#surprise")[0].src = "http://www.youtube.com/embed/2u7XysaEVBs?rel=0&wmode=transparent&enablejsapi=1&autoplay=1";
 	});
-	$('#hello_there').on('show', function () {
+	/*$('#hello_there').on('show', function () {
 			toggleVideo("");
 		})
    $('#hello_there').on('hidden', function () {
 			toggleVideo("hide");
-		})
+		})*/
 </script>
 
 <!-- Piwik Image Tracker -->
@@ -370,11 +371,11 @@ Et nous serons heureux!">
 	<div class="modal fade hide" id="hello_there"  style="width:670px;">
 					<div class="modal-header">
 						<a class="close" data-dismiss="modal">&times;</a>
-						<h3>La curiosité est toujours bienvenue!...</h3>
+						<h3>Oh! Un code secret!</h3>
 					</div>
 					<div class="modal-body">
 					<p>
-<iframe id="surprise" width="640" height="360" src="http://www.youtube.com/embed/2u7XysaEVBs?rel=0&wmode=transparent&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+<iframe id="surprise" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe>
 </p>
 					</div>
 				</div>

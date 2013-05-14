@@ -158,6 +158,12 @@ margin-left: 20px;
 	border-left: 4px solid #FF8205;
 }
 
+/* spécifique contact */
+#contact li
+{
+	margin-bottom: 10px;
+}
+
 /* on gère les infowindow de google map */
 .InfoBlock .AdditionalData li 
 {	
