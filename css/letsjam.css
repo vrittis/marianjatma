@@ -260,6 +260,28 @@ margin-left: 20px;
 	background-attachment: fixed;
 }
 
+#after_illustration
+{
+	background-image: url(../img/Smack.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+}
+
+#jeu_illustration
+{
+	background-image: url(../img/redwedding.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+}
+
 /* correctif google maps et bootstrap */
 .map img
 {
