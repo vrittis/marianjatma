@@ -282,6 +282,28 @@ margin-left: 20px;
 	 background-size: cover;
 }
 
+#nowwhat_illustration
+{
+	background-image: url(../img/after.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+}
+
+#photos_illustration
+{
+	background-image: url(../img/photos.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+}
+
 /* correctif google maps et bootstrap */
 .map img
 {
